@@ -2,8 +2,8 @@ public class Employee {
     private final String fullName;
     private int department;
     private int salary;
-    public  static int counter=1;
-    private int id = counter;
+    private static int counter = 1;
+    public final int id;
 
     public String getFullName() {
         return fullName;
@@ -29,7 +29,7 @@ public class Employee {
         this.fullName = fullName;
         this.department = department;
         this.salary = salary;
-        this.id=counter++;
+        this.id = counter++;
     }
 
     @Override
