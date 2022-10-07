@@ -10,7 +10,9 @@ public class Easy extends Main {
     public static int sumSalary() {
         int sum = 0;
         for (Employee employee1 : employee) {
-            sum += employee1.getSalary();
+            if (employee1!=null) {
+                sum += employee1.getSalary();
+            }
         }
         return sum;
     }
@@ -19,10 +21,11 @@ public class Easy extends Main {
         int minSumma = Integer.MAX_VALUE;
         String employeeMinSumma = null;
         for (Employee employee1 : employee) {
-            if (employee1.getSalary() < minSumma) {
+            if (employee1!=null && employee1.getSalary() < minSumma) {
                 minSumma = employee1.getSalary();
                 employeeMinSumma = employee1.getFullName();
             }
+
         }
         return employeeMinSumma;
     }
@@ -31,7 +34,7 @@ public class Easy extends Main {
         int maxSumma = Integer.MIN_VALUE;
         String employeeMaxSumma = null;
         for (Employee employee1 : employee) {
-            if (employee1.getSalary() > maxSumma) {
+            if (employee1!=null && employee1.getSalary() > maxSumma) {
                 maxSumma = employee1.getSalary();
                 employeeMaxSumma = employee1.getFullName();
             }
@@ -39,16 +42,29 @@ public class Easy extends Main {
         return employeeMaxSumma;
     }
 
-    public static int averageSalary() {
-        int averageSumma = sumSalary() / employee.length;
+    public static double averageSalary() {
+        double sum = 0;
+        double averageSumma=0;
+        int counter=0;
+        for (Employee employee1 : employee) {
+            if (employee1!=null) {
+                sum += employee1.getSalary();
+                counter++;
+            }
+        }
+        if (counter!=0) {
+            averageSumma = sum / counter;
+        } else System.out.println("Извините, но кажется у вас не осталось сотрудников");
         return averageSumma;
     }
 
     public static void ollEmployee() {
         System.out.println("Полный список сотрудников: ");
         for (Employee employee1 : employee) {
-            String ollEmployees = employee1.getFullName();
-            System.out.println(ollEmployees);
+            if (employee1!=null) {
+                String ollEmployees = employee1.getFullName();
+                System.out.println(ollEmployees);
+            }
         }
     }
 }

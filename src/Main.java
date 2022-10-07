@@ -29,7 +29,7 @@ public class Main {
         System.out.println("Сумма затарат на зарплаты в месяц: " + Easy.sumSalary());
         System.out.println("Сотрудник с минимальной зарплатой : " + Easy.minSalary());
         System.out.println("Сотрудник с максимальной зарплатой : " + Easy.maxSalary());
-        System.out.println("Среднее значение зарплат равно : " + Easy.averageSalary());
+        System.out.printf("Среднее значение зарплат равно : %.2f %n", Easy.averageSalary());
         Easy.ollEmployee();
 
         //Повышенная сложность
