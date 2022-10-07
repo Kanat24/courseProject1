@@ -52,8 +52,8 @@ public class Medium extends Main {
     }
 
     public static void averageSalaryDepartment(int departamentNumber) {
-        int sum = 0;
-        int averageSummaDepartament = 0;
+        double sum = 0;
+        double averageSummaDepartament = 0;
         int counter = 0;
         for (Employee employee1 : employee) {
             if (employee1 != null && employee1.getDepartment() == departamentNumber) {
@@ -62,7 +62,7 @@ public class Medium extends Main {
                 averageSummaDepartament = sum / counter;
             }
         }
-        System.out.println(averageSummaDepartament);
+        System.out.printf("%.2f %n", averageSummaDepartament);
     }
 
     public static void indexOllSalary(int departamentNumber, int arg) {
